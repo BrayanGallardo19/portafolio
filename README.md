@@ -22,7 +22,6 @@ Cuando tengas la URL definitiva, conviene agregar:
 - una imagen `og:image` de vista previa para LinkedIn/WhatsApp.
 
 
-## V6 Premium
 Esta variante mantiene exactamente el contenido y la estructura aprobados en V5.
 Los cambios son únicamente visuales:
 - microinteracciones en tarjetas
