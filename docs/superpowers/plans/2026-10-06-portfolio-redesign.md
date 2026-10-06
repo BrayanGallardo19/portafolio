@@ -50,10 +50,10 @@
 - Produces: `App(): JSX.Element`, sections `#inicio`, `#experiencia`, `#proyectos`, `#perfil`, `#contacto`; navigation links to those IDs.
 - Consumes: verified copy from the spec and the existing PR.
 
-- [ ] **Step 1: Add test scripts and dependencies in `package.json`, then write failing browser tests** in `tests/portfolio.spec.ts`: portada contains the exact role headline, `#experiencia` precedes `#proyectos`, navigation reaches those IDs, mobile menu opens/closes with Escape and returns focus.
-- [ ] **Step 2: Run** `npm run test:e2e -- --grep "portada|navegación"` and observe failure on the old branch.
+- [ ] **Step 1: Add test scripts/dependencies in `package.json`, run `npm install`, configure Playwright's Vite webServer, then write failing browser tests** in `tests/portfolio.spec.ts`: portada contains the exact role headline, `#experiencia` precedes `#proyectos`, navigation reaches those IDs, mobile menu opens/closes with Escape and returns focus.
+- [ ] **Step 2: Run** `npm run test:e2e -- --grep "portada|navegación"` and observe the headline/order assertions fail against the old page.
 - [ ] **Step 3: Add Vite/React/TS and implement `App(): JSX.Element`** with the approved hierarchy, reusable layout and responsive paleta in `src/styles.css`. Transfer only accurate copy and assets; do not place a broken CV link.
-- [ ] **Step 4: Run** `npm run build` and `npm test -- --grep "portada|navegación"`; expect passes.
+- [ ] **Step 4: Run** `npm run build` and `npm run test:e2e -- --grep "portada|navegación"`; expect passes.
 - [ ] **Step 5: Commit** `feat: migrate recruiter portfolio shell to React`.
 
 ### Task 2: Datos, casos y filtros
@@ -104,5 +104,5 @@
 - [ ] **Step 1: Add failing integration tests**: no horizontal scroll at 320/390/768/1440 px; reduced motion disables nonessential animation; all local images load; contact and project links have valid hrefs; keyboard focus is visible; title, description and OG reference the definitive portfolio URL.
 - [ ] **Step 2: Run** `npm run test:unit` and `npm run test:e2e`; note remaining failures.
 - [ ] **Step 3: Fix responsive/accessibility and metadata issues** and update README with `npm install`, `npm run dev`, `npm run build`, Vercel settings, project editing, media provenance and known omissions.
-- [ ] **Step 4: Run** `npm run build`, `npm test`, `git diff --check`; expect success. Inspect screenshots of hero and all four cases at mobile and desktop; record unresolved content/asset limits.
+- [ ] **Step 4: Run** `npm run build`, `npm run test:unit`, `npm run test:e2e`, `git diff --check`; expect success. Inspect screenshots of hero and all four cases at mobile and desktop; record unresolved content/asset limits.
 - [ ] **Step 5: Commit** `docs: complete portfolio preview and maintenance guide`; verify the PR preview URL loads the new build. Leave PR draft until Brayan reviews it; do not merge into `main`.
